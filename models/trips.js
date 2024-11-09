@@ -52,7 +52,7 @@ const tripSchema = new mongoose.Schema({
 
 const joiSchema = Joi.object({
     user: Joi.string().length(24).hex().required(),
-    slug: Joi.string().min(2).max(255).reuired(),
+    slug: Joi.string().min(2).max(255).required(),
     name: Joi.string().min(2).max(255).required(),
     location: Joi.string().required(),
     coordinates: Joi.object().required(),
