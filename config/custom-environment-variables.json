@@ -1,0 +1,7 @@
+{
+    "jwtPrivateKey": "cscape_jwtPrivateKey",
+    "db": "cscape_db",
+    "weatherApiKey": "cscape_weatherApiKey",
+    "openApiKey": "cscape_openApiKey",
+    "googleApiKey": "cscape_googleApiKey"
+}
