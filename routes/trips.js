@@ -31,7 +31,7 @@ router.post('', authorization, async (req, res) => {
     }
     const isValid = validateTrip({ user:userId, ...req.body })
     if (!isValid)
-        return res.status(401).send("Not Authorized")
+        return res.status(401).send("Bad Request for Trip")
     try {
         const trip = new Trip({ user:userId, ...req.body})
         const result = await trip.save()
