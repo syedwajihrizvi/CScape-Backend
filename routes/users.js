@@ -3,7 +3,16 @@ const config = require('config')
 const _ = require('lodash')
 const { validateUser, User } = require('../models/user')
 const express = require('express')
+const authorization = require('../middleware/auth')
 const router = express.Router()
+
+router.get('/me', authorization, async (req, res) => {
+    console.log(req.user)
+    const { _id, email, firstName } = req.user
+    if (!_id || !email || !firstName)
+        return res.status(400).send('Forbidden')
+    return res.send({_id, email, firstName})
+})
 
 router.post('/register', async (req, res) => {
     const result = validateUser(req.body)
