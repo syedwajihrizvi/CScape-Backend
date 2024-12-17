@@ -21,6 +21,8 @@ app.use('/cscape/api/city-details', city_details)
 app.use('/cscape/api/users', users)
 app.use('/cscape/api/trips', trips)
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000")
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
 })
